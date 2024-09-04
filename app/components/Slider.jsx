@@ -63,7 +63,7 @@ function Slider() {
                         </BoxReveal>
                         <BoxReveal boxColor={"#f3c860"} duration={0.5}>
                             <p className="mt-3 w-1/2">
-                                Whether it's the smooth, powerful acceleration, the quiet, opulent interiors, or the cutting-edge features, luxury cars stand as symbols of prestige and
+                                Whether it&apos;s the smooth, powerful acceleration, the quiet, opulent interiors, or the cutting-edge features, luxury cars stand as symbols of prestige and
                                 <span className="font-bold text-primary-400 text-xl uppercase"> sophistication.</span>
                             </p>
                         </BoxReveal>
