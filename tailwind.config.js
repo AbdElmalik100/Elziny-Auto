@@ -10,9 +10,9 @@ module.exports = {
       container: {
         center: true
       },
-      fontFamily: {
-        "Jost": "Jost"
-      },
+      // fontFamily: {
+      //   "Jost": "Jost"
+      // },
       animation: {
         backgroundPositionSpin: "background-position-spin 3000ms infinite alternate",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",

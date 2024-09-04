@@ -20,7 +20,7 @@ function Slider() {
                 direction="vertical"
                 autoplay={{
                     delay: 3000,
-                    disableOnInteraction: false,
+                    disableOnInteraction: true,
                 }}
                 loop={true}
                 modules={[Scrollbar, Autoplay]}
@@ -94,7 +94,7 @@ function Slider() {
                 </SwiperSlide>
                 <SwiperSlide className="relative">
                     <div className="slider-overlay">
-                        <Image src={car4} alt="car-4" />
+                        <Image src={car4} alt="car-4"/>
                     </div>
                     <div className="absolute z-10 top-1/2 w-[1000px] -translate-x-1/2 -translate-y-1/2 left-1/2 text-center">
                         <BoxReveal boxColor={"#f3c860 "} duration={0.5}>

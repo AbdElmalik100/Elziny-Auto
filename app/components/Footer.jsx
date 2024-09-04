@@ -68,7 +68,7 @@ function Footer() {
                                 </li>
                             </ul>
                         </div>
-                        <div className="right-side basis-1/4">
+                        <div className="right-side basis-1/4 w-full">
                             <h2 className='font-bold uppercase text-lg mb-5'>
                                 Follow us <span className='text-primary-300 italic ms-2'>On</span>
                             </h2>
@@ -86,8 +86,8 @@ function Footer() {
                                     <Icon icon='ic:baseline-tiktok' fontSize={22}></Icon>
                                 </a>
                             </div>
-                            <div className='rounded-lg mt-8 overflow-hidden h-[225px] w-[400px]'>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d75938.00580774879!2d31.48126831332433!3d30.026636625829727!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458230f8eec8f39%3A0xc0bbbdced89f01de!2sElziny%20auto!5e0!3m2!1sen!2seg!4v1725432213665!5m2!1sen!2seg" className='border-none w-full h-full' allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <div className='rounded-lg mt-8 overflow-hidden h-[225px] w-full'>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d75938.00580774879!2d31.48126831332433!3d30.026636625829727!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458230f8eec8f39%3A0xc0bbbdced89f01de!2sElziny%20auto!5e0!3m2!1sen!2seg!4v1725432213665!5m2!1sen!2seg" className='border-none w-full h-full' allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </div>
