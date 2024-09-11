@@ -19,7 +19,7 @@ function Categories() {
                         categories.map((category, index) => (
                             <BlurFade key={index} delay={0.25 * index * 0.2} inView={true}>
                                 <Link href={`/categories/${category.slug}`} className='relative group'>
-                                    <Image loader={loaderProp} width={200} height={225} className='absolute z-10 group-hover:animate-pulse pointer-events-none opacity-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2' src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/categories/${category.image}`} alt={category.image} />
+                                    <Image priority unoptimized loader={loaderProp} width="200" height="200" style={{height: "auto", width: "auto"}} className='absolute !w-48 z-10 group-hover:animate-pulse pointer-events-none opacity-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2' src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/categories/${category.image}`} alt={category.image} />
                                     <MagicCard
                                         className="grid place-items-center w-full transition-all ease-out duration-300 hover:border-primary-400 h-[300px] shadow-2xl hover:text-primary-300"
                                         gradientColor={"#efaf3055"}

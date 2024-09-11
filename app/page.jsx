@@ -63,7 +63,7 @@ export default function Home() {
                       <Link href='/' className="w-12 h-12 rounded-full grid duration-300 place-items-center transition-all ease-in-out border group-hover:bg-primary-300 border-primary-300 absolute right-3 top-3 z-10">
                         <Icon icon="mingcute:arrow-right-up-fill" fontSize={28} className="group-hover:rotate-45 transition-all ease-in-out duration-300" />
                       </Link>
-                      <Image loader={loaderProp} src={car6} alt="car 6" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
+                      <Image unoptimized loader={loaderProp} src={car6} alt="car 6" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
                       <div className="flex flex-col translate-y-20 transition-all ease-in-out group-hover:translate-y-0 duration-300">
                         <h2 className="text-4xl font-bold mb-2 uppercase">Iconic</h2>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat harum explicabo, totam voluptatem odit numquam..</p>
@@ -79,7 +79,7 @@ export default function Home() {
                       <Link href='/' className="w-12 h-12 rounded-full grid duration-300 place-items-center transition-all ease-in-out border group-hover:bg-primary-300 border-primary-300 absolute right-3 top-3 z-10">
                         <Icon icon="mingcute:arrow-right-up-fill" fontSize={28} className="group-hover:rotate-45 transition-all ease-in-out duration-300" />
                       </Link>
-                      <Image loader={loaderProp} src={car7} alt="car 7" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
+                      <Image unoptimized loader={loaderProp} src={car7} alt="car 7" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
                       <div className="flex flex-col translate-y-20 transition-all ease-in-out group-hover:translate-y-0 duration-300">
                         <h2 className="text-4xl font-bold mb-2 uppercase">Majesty</h2>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat harum explicabo, totam voluptatem odit numquam..</p>
@@ -95,7 +95,7 @@ export default function Home() {
                       <Link href='/' className="w-12 h-12 rounded-full grid duration-300 place-items-center transition-all ease-in-out border group-hover:bg-primary-300 border-primary-300 absolute right-3 top-3 z-10">
                         <Icon icon="mingcute:arrow-right-up-fill" fontSize={28} className="group-hover:rotate-45 transition-all ease-in-out duration-300" />
                       </Link>
-                      <Image loader={loaderProp} src={car8} alt="car 8" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
+                      <Image unoptimized loader={loaderProp} src={car8} alt="car 8" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
                       <div className="flex flex-col translate-y-20 transition-all ease-in-out group-hover:translate-y-0 duration-300">
                         <h2 className="text-4xl font-bold mb-2 uppercase">Mastercraft</h2>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat harum explicabo, totam voluptatem odit numquam..</p>
@@ -111,7 +111,7 @@ export default function Home() {
                       <Link href='/' className="w-12 h-12 rounded-full grid duration-300 place-items-center transition-all ease-in-out border group-hover:bg-primary-300 border-primary-300 absolute right-3 top-3 z-10">
                         <Icon icon="mingcute:arrow-right-up-fill" fontSize={28} className="group-hover:rotate-45 transition-all ease-in-out duration-300" />
                       </Link>
-                      <Image loader={loaderProp} src={car9} alt="car 9" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
+                      <Image unoptimized loader={loaderProp} src={car9} alt="car 9" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
                       <div className="flex flex-col translate-y-20 transition-all ease-in-out group-hover:translate-y-0 duration-300">
                         <h2 className="text-4xl font-bold mb-2 uppercase">Elite</h2>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat harum explicabo, totam voluptatem odit numquam..</p>
@@ -202,7 +202,7 @@ export default function Home() {
                           </button>
                         </div>
                         <div className="image-banner absolute lg:top-0 -top-52 lg:-right-24 right-0 h-full lg:w-3/4 w-full">
-                          <Image loader={loaderProp} src={bannerCar} alt="banner car" className="w-full h-full object-cover object-bottom lg:[mask-image:linear-gradient(to_right,transparent_15%,#000_100%)] [mask-image:linear-gradient(to_top,transparent_15%,#000_100%)]" />
+                          <Image unoptimized loader={loaderProp} src={bannerCar} alt="banner car" className="w-full h-full object-cover object-bottom lg:[mask-image:linear-gradient(to_right,transparent_15%,#000_100%)] [mask-image:linear-gradient(to_top,transparent_15%,#000_100%)]" />
                         </div>
                       </div>
                     </NeonGradientCard>

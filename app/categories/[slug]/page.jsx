@@ -20,7 +20,6 @@ function Cars() {
 
     
     useEffect(() => {
-        console.log("query changed");
         if (query.size > 0) {
             dispatch(getCars({ model: query.get("model") || '', fuel_type: query.get("ft") || '', is_luxury: query.get("lux") || '' }))
         } else {    
@@ -65,7 +64,7 @@ function Cars() {
                                 :
                                 <div className='empty-cars grid place-items-center col-span-full min-h-screen'>
                                     <div className='flex flex-col gap-4 items-center'>
-                                        <Image src={emptyFuel} alt='Empty Fuel' className='w-40' />
+                                        <Image priority src={emptyFuel} alt='Empty Fuel' className='w-40' />
                                         <h3 className='text-4xl text-neutral-400'>No cars to show</h3>
                                     </div>
                                 </div>
