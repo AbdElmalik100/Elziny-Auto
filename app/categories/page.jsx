@@ -4,10 +4,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import BlurFade from '../components/ui/BlurFade'
 import { MagicCard } from '../components/ui/MagicCard'
+import loaderProp from '../utils/ImageLoader'
+
 
 function Categories() {
     const { categories } = useSelector(state => state.categories)
-
+    
     return (
         <div className='categories-page min-h-screen text-white py-32'>
             <div className="container px-4">
@@ -17,7 +19,7 @@ function Categories() {
                         categories.map((category, index) => (
                             <BlurFade key={index} delay={0.25 * index * 0.2} inView={true}>
                                 <Link href={`/categories/${category.slug}`} className='relative group'>
-                                    <Image width={200} height={225} className='absolute z-10 group-hover:animate-pulse pointer-events-none opacity-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2' src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/categories/${category.image}`} alt={category.image} />
+                                    <Image loader={loaderProp} width={200} height={225} className='absolute z-10 group-hover:animate-pulse pointer-events-none opacity-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2' src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/categories/${category.image}`} alt={category.image} />
                                     <MagicCard
                                         className="grid place-items-center w-full transition-all ease-out duration-300 hover:border-primary-400 h-[300px] shadow-2xl hover:text-primary-300"
                                         gradientColor={"#efaf3055"}

@@ -23,6 +23,7 @@ import { useEffect } from "react";
 import { getCars } from "./store/slices/carsSlice";
 import Loading from "./components/Loading";
 import CarCard from "./components/CarCard";
+import loaderProp from "./utils/ImageLoader";
 
 export default function Home() {
   const dispatch = useDispatch()
@@ -62,7 +63,7 @@ export default function Home() {
                       <Link href='/' className="w-12 h-12 rounded-full grid duration-300 place-items-center transition-all ease-in-out border group-hover:bg-primary-300 border-primary-300 absolute right-3 top-3 z-10">
                         <Icon icon="mingcute:arrow-right-up-fill" fontSize={28} className="group-hover:rotate-45 transition-all ease-in-out duration-300" />
                       </Link>
-                      <Image src={car6} alt="car 6" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
+                      <Image loader={loaderProp} src={car6} alt="car 6" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
                       <div className="flex flex-col translate-y-20 transition-all ease-in-out group-hover:translate-y-0 duration-300">
                         <h2 className="text-4xl font-bold mb-2 uppercase">Iconic</h2>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat harum explicabo, totam voluptatem odit numquam..</p>
@@ -78,7 +79,7 @@ export default function Home() {
                       <Link href='/' className="w-12 h-12 rounded-full grid duration-300 place-items-center transition-all ease-in-out border group-hover:bg-primary-300 border-primary-300 absolute right-3 top-3 z-10">
                         <Icon icon="mingcute:arrow-right-up-fill" fontSize={28} className="group-hover:rotate-45 transition-all ease-in-out duration-300" />
                       </Link>
-                      <Image src={car7} alt="car 7" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
+                      <Image loader={loaderProp} src={car7} alt="car 7" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
                       <div className="flex flex-col translate-y-20 transition-all ease-in-out group-hover:translate-y-0 duration-300">
                         <h2 className="text-4xl font-bold mb-2 uppercase">Majesty</h2>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat harum explicabo, totam voluptatem odit numquam..</p>
@@ -94,7 +95,7 @@ export default function Home() {
                       <Link href='/' className="w-12 h-12 rounded-full grid duration-300 place-items-center transition-all ease-in-out border group-hover:bg-primary-300 border-primary-300 absolute right-3 top-3 z-10">
                         <Icon icon="mingcute:arrow-right-up-fill" fontSize={28} className="group-hover:rotate-45 transition-all ease-in-out duration-300" />
                       </Link>
-                      <Image src={car8} alt="car 8" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
+                      <Image loader={loaderProp} src={car8} alt="car 8" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
                       <div className="flex flex-col translate-y-20 transition-all ease-in-out group-hover:translate-y-0 duration-300">
                         <h2 className="text-4xl font-bold mb-2 uppercase">Mastercraft</h2>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat harum explicabo, totam voluptatem odit numquam..</p>
@@ -110,7 +111,7 @@ export default function Home() {
                       <Link href='/' className="w-12 h-12 rounded-full grid duration-300 place-items-center transition-all ease-in-out border group-hover:bg-primary-300 border-primary-300 absolute right-3 top-3 z-10">
                         <Icon icon="mingcute:arrow-right-up-fill" fontSize={28} className="group-hover:rotate-45 transition-all ease-in-out duration-300" />
                       </Link>
-                      <Image src={car9} alt="car 9" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
+                      <Image loader={loaderProp} src={car9} alt="car 9" className="w-full -z-10 rounded-xl absolute top-0 left-0 [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] object-cover h-full" />
                       <div className="flex flex-col translate-y-20 transition-all ease-in-out group-hover:translate-y-0 duration-300">
                         <h2 className="text-4xl font-bold mb-2 uppercase">Elite</h2>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat harum explicabo, totam voluptatem odit numquam..</p>
@@ -169,101 +170,6 @@ export default function Home() {
                             </motion.div>
                       ))
                     }
-                    {/* <motion.div
-                      initial={{ x: -50, opacity: 0 }}
-                      whileInView={{ x: 0, opacity: 1 }}
-                      transition={{ type: "tween", ease: "easeOut", delay: 0.3 }}
-                      className="w-full"
-                    >
-                      <ShineBorder
-                        borderRadius={15}
-                        className="border w-full !bg-transparent border-neutral-700 relative flex flex-col h-full"
-                        color={['#f3c860', '#fbeeca', '#efaf30', '#ab4b12', '#411807']}
-                      >
-                        <span className="isAvailable badge bg-green-700">Available</span>
-                        <div className="img w-full h-[250px]">
-                          <Image src={carCard1} alt="car card 1" className="rounded-xl w-full h-full object-cover" />
-                        </div>
-                        <div className="info w-full mt-5">
-                          <div className="flex justify-between">
-                            <h3 className="text-2xl font-bold">Mercedes Benz CLA 200 Coupé</h3>
-                            <div className="color-box-container">
-                              <span className="block w-10 h-10 ms-auto mb-2 rounded-lg bg-[#020507] border border-neutral-600"></span>
-                            </div>
-                          </div>
-                          <p className="mt-3 mb-5">
-                            You can fit out the new CLA as you wish, just lean your back.
-                            Get it now & Play By Your Rules
-                          </p>
-                        </div>
-                        <button className="prime-btn w-full mt-auto">
-                          Place an order
-                        </button>
-                      </ShineBorder>
-                    </motion.div>
-                    <motion.div
-                      initial={{ y: -50, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      transition={{ type: "tween", ease: "easeOut", delay: 0.3 }}
-                      className="w-full"
-                    >
-                      <ShineBorder
-                        borderRadius={15}
-                        className="border w-full !bg-transparent border-neutral-700 relative flex flex-col h-full"
-                        color={['#f3c860', '#fbeeca', '#efaf30', '#ab4b12', '#411807']}
-                      >
-                        <span className="isAvailable badge bg-rose-700">Unavailable</span>
-                        <div className="img w-full h-[250px]">
-                          <Image src={carCard2} alt="car card 2" className="rounded-xl w-full h-full object-cover" />
-                        </div>
-                        <div className="info w-full mt-5">
-                          <div className="flex justify-between">
-                            <h3 className="text-2xl font-bold">HE Range ROVER SV AUTOBIOGRAPHY</h3>
-                            <div className="color-box-container">
-                              <span className="block w-10 h-10 ms-auto mb-2 rounded-lg bg-[#14181D] border border-neutral-600"></span>
-                            </div>
-                          </div>
-                          <p className="mt-3 mb-5">
-                            An unmatched combination of luxury, design, and all-terrain performance ... specific to your exacting taste.
-                          </p>
-                        </div>
-                        <button className="prime-btn w-full mt-auto" disabled={true}>
-                          Place an order
-                        </button>
-                      </ShineBorder>
-                    </motion.div>
-                    <motion.div
-                      initial={{ x: 50, opacity: 0 }}
-                      whileInView={{ x: 0, opacity: 1 }}
-                      transition={{ type: "tween", ease: "easeOut", delay: 0.3 }}
-                      className="w-full"
-                    >
-                      <ShineBorder
-                        borderRadius={15}
-                        className="border w-full !bg-transparent border-neutral-700 relative flex flex-col h-full"
-                        color={['#f3c860', '#fbeeca', '#efaf30', '#ab4b12', '#411807']}
-                      >
-                        <span className="isAvailable badge bg-green-700">Available</span>
-                        <div className="img w-full h-[250px]">
-                          <Image src={carCard3} alt="car card 3" className="rounded-xl w-full h-full object-cover" />
-                        </div>
-                        <div className="info w-full mt-5">
-                          <div className="flex justify-between">
-                            <h3 className="text-2xl font-bold">Lamborghini URUS</h3>
-                            <div className="color-box-container">
-                              <span className="block w-10 h-10 ms-auto mb-2 rounded-lg bg-[#918D8C] border border-neutral-600"></span>
-                            </div>
-                          </div>
-                          <p className="mt-3 mb-5">
-                            Conquer Any Road In The Unique Masculine Grey Color
-                            The Only Car With Such Features In Egypt. Exclusively Available At Elziny Auto
-                          </p>
-                        </div>
-                        <button className="prime-btn w-full mt-auto">
-                          Place an order
-                        </button>
-                      </ShineBorder>
-                    </motion.div> */}
                   </div>
                   <motion.div
                     initial={{ y: 35, opacity: 0 }}
@@ -296,7 +202,7 @@ export default function Home() {
                           </button>
                         </div>
                         <div className="image-banner absolute lg:top-0 -top-52 lg:-right-24 right-0 h-full lg:w-3/4 w-full">
-                          <Image src={bannerCar} alt="banner car" className="w-full h-full object-cover object-bottom lg:[mask-image:linear-gradient(to_right,transparent_15%,#000_100%)] [mask-image:linear-gradient(to_top,transparent_15%,#000_100%)]" />
+                          <Image loader={loaderProp} src={bannerCar} alt="banner car" className="w-full h-full object-cover object-bottom lg:[mask-image:linear-gradient(to_right,transparent_15%,#000_100%)] [mask-image:linear-gradient(to_top,transparent_15%,#000_100%)]" />
                         </div>
                       </div>
                     </NeonGradientCard>
