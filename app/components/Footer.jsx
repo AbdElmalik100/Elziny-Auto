@@ -11,12 +11,12 @@ function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "tween", delay: 0.4 }}
         >
-            <footer className='p-12 m-5 overflow-hidden relative w-auto h-auto bg-neutral-950  rounded-3xl text-white'>
-                <BorderBeam size={650} colorFrom='#f3c860' colorTo='#723215' duration={12} delay={9}></BorderBeam>
+            <footer className='lg:p-12 p-8 px-3 m-5 overflow-hidden relative w-auto h-auto bg-neutral-950 rounded-3xl text-white'>
+                <BorderBeam size={550} colorFrom='#f3c860' colorTo='#723215' duration={12} delay={9}></BorderBeam>
                 <div className="container px-4">
                     <div className='grid grid-cols-4 gap-10 justify-items-center'>
-                        <div className="left-side">
-                            <Link href='/' className='uppercase font-bold text-4xl mb-2 block'>
+                        <div className="left-side lg:col-span-1 col-span-4">
+                            <Link href='/' className='uppercase font-bold text-4xl mb-2 block lg:text-start text-center'>
                                 Elziny
                             </Link>
                             <p className='text-neutral-400 text-sm'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla vitae sed in vel soluta debitis quidem quis illo provident facilis, eos architecto sapiente repellendus quibusdam dolor sit numquam laudantium iusto!</p>
@@ -35,13 +35,10 @@ function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className="mid-side col-span-2 flex gap-24 w-full justify-center">
+                        <div className="mid-side lg:col-span-2 col-span-4 flex lg:gap-24 gap-10 w-full justify-center lg:flex-row flex-col lg:items-start items-center lg:text-start text-center">
                             <ul className='first-links flex flex-col gap-5'>
                                 <li>
                                     <Link href='#' className='line-hover transition-all ease-in-out hover:text-primary-300'>About</Link>
-                                </li>
-                                <li>
-                                    <Link href='#' className='line-hover transition-all ease-in-out hover:text-primary-300'>Cars</Link>
                                 </li>
                                 <li>
                                     <Link href='#' className='line-hover transition-all ease-in-out hover:text-primary-300'>Cars for sale</Link>
@@ -55,7 +52,7 @@ function Footer() {
                             </ul>
                             <ul className='second-links flex flex-col gap-5'>
                                 <li>
-                                    <Link href='#' className='line-hover transition-all ease-in-out hover:text-primary-300'>Categories</Link>
+                                    <Link href='/categories' className='line-hover transition-all ease-in-out hover:text-primary-300'>Categories</Link>
                                 </li>
                                 <li>
                                     <Link href='#' className='line-hover transition-all ease-in-out hover:text-primary-300'>Contact us</Link>
@@ -68,11 +65,11 @@ function Footer() {
                                 </li>
                             </ul>
                         </div>
-                        <div className="right-side basis-1/4 w-full">
-                            <h2 className='font-bold uppercase text-lg mb-5'>
+                        <div className="right-side basis-1/4 w-full lg:col-span-1 col-span-4">
+                            <h2 className='font-bold uppercase text-lg mb-5 lg:text-start text-center'>
                                 Follow us <span className='text-primary-300 italic ms-2'>On</span>
                             </h2>
-                            <div className="social-links flex items-center gap-3">
+                            <div className="social-links flex items-center gap-3 lg:justify-start justify-center">
                                 <a href="www.facebook.com" target='_blank' className='grid place-items-center w-10 h-10 border rounded-full transition-all ease-in-out duration-300 hover:text-primary-300 hover:border-primary-300'>
                                     <Icon icon='ri:facebook-fill' fontSize={22}></Icon>
                                 </a>
@@ -91,7 +88,7 @@ function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className='copyrights mt-20 pt-5 border-t border-neutral-500 flex items-center justify-between'>
+                    <div className='copyrights mt-20 pt-5 border-t border-neutral-500 flex items-center justify-between lg:text-base lg:flex-row flex-col-reverse lg:gap-0 gap-3'>
                         <span className='text-neutral-400'>
                             &copy; 2023 Elziny, All Rights Reserved
                         </span>

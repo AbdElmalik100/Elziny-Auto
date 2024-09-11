@@ -7,20 +7,26 @@
   * {
     @apply box-border;
   }
+  html {
+    @apply scroll-smooth;
+  }
   body {
     @apply text-base bg-neutral-900;
+  }
+  select {
+    @apply outline-none bg-transparent bg-neutral-800;
   }
   .prime-btn {
     @apply p-2 px-5 rounded-lg transition-all ease-in-out text-primary-400 relative before:absolute before:top-0 before:left-0 before:origin-right before:scale-x-0 hover:before:origin-left hover:before:scale-x-100 hover:text-white before:duration-300 before:w-full before:h-full before:bg-gradient-to-r before:from-primary-500 border border-primary-400 before:to-primary-300 overflow-hidden before:-z-10 before:transition-transform before:ease-in-out uppercase font-bold disabled:before:content-none disabled:text-primary-400 disabled:opacity-50;
   }
   .line-hover {
-    @apply relative transition-all ease-in-out before:absolute before:w-full before:h-[1px] before:rounded-full before:origin-right before:scale-x-0 before:bg-primary-300 before:left-0 before:bottom-0 before:transition-transform before:ease-in-out before:duration-300 hover:before:scale-x-100 hover:before:origin-left
+    @apply relative transition-all ease-in-out before:absolute before:w-full before:h-[1px] before:rounded-full before:origin-right before:scale-x-0 before:bg-primary-300 before:left-0 before:bottom-0 before:transition-transform before:ease-in-out before:duration-300 hover:before:scale-x-100 hover:before:origin-left;
   }
   .slider-overlay {
-    @apply w-full before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-gradient-to-t before:from-neutral-900 to-transparent before:pointer-events-none before:z-10
+    @apply w-full before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-gradient-to-t before:from-neutral-900 to-transparent before:pointer-events-none before:z-10;
   }
   .badge {
-    @apply text-xs uppercase rounded-full px-3 p-0.5 absolute top-4 left-4;
+    @apply text-xs uppercase rounded-full px-3 p-0.5 absolute top-1 left-1;
   }
 }
 
@@ -51,3 +57,16 @@
 
 
 
+.mySwiper .swiper-slide img {
+  opacity: 0.4;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.mySwiper .swiper-slide-thumb-active img {
+  opacity: 1;
+  border-color: #efaf30;
+}

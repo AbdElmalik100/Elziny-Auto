@@ -1,30 +1,31 @@
 import Link from "next/link"
-
+import MobileMenu from './MobileMenu'
 function Header() {
     return (
-        <header className="fixed top-10 left-1/2 -translate-x-1/2 rounded-lg p-2 z-30 w-[775px] border border-neutral-400 text-white bg-neutral-700/50 flex items-center gap-2 justify-between backdrop-blur-md">
+        <header className="fixed xl:mx-80 lg:mx-52 m-3 flex items-center gap-2 justify-between rounded-lg p-2 z-40 xl:w-[calc(100%-640px)] lg:w-[calc(100%-416px)] w-[calc(100%-24px)] border border-neutral-400 bg-neutral-700/25 text-white before:absolute before:w-full before:h-full before:left-0 before:top-0 before:backdrop-blur-md before:rounded-md before:-z-10">
             <div className="logo ms-4">
                 <Link href='/' className="font-bold text-xl">Elziny</Link>
             </div>
-            <ul className="links flex items-center gap-4 uppercase">
-                <li className="relative transition-all ease hover:text-primary-300 before:absolute before:w-full before:h-[1px] before:rounded-full before:origin-right before:scale-x-0 before:bg-primary-300 before:left-0 before:bottom-0 before:transition-transform before:ease before:duration-300 hover:before:scale-x-100 hover:before:origin-left">
+            <ul className="links md:flex items-center gap-4 uppercase hidden">
+                <li className="line-hover hover:text-primary-300">
                     <Link href='/'>
                         About
                     </Link>
                 </li>
-                <li className="relative transition-all ease hover:text-primary-300 before:absolute before:w-full before:h-[1px] before:rounded-full before:origin-right before:scale-x-0 before:bg-primary-300 before:left-0 before:bottom-0 before:transition-transform before:ease before:duration-300 hover:before:scale-x-100 hover:before:origin-left">
-                    <Link href='/'>
-                        Cars
+                <li className="line-hover hover:text-primary-300">
+                    <Link href='/categories'>
+                        Categories
                     </Link>
                 </li>
-                <li className="relative transition-all ease hover:text-primary-300 before:absolute before:w-full before:h-[1px] before:rounded-full before:origin-right before:scale-x-0 before:bg-primary-300 before:left-0 before:bottom-0 before:transition-transform before:ease before:duration-300 hover:before:scale-x-100 hover:before:origin-left">
+                <li className="line-hover hover:text-primary-300">
                     <Link href='/'>
                         Cars for sale
                     </Link>
                 </li>
             </ul>
-            <button className="prime-btn">Explore Cars</button>
-        </header>
+            <button className="prime-btn md:block hidden">Explore Cars</button>
+            <MobileMenu />
+        </header >
     )
 }
 

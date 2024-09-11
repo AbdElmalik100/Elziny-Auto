@@ -34,8 +34,8 @@ export const cloudProps: Omit<ICloud, "children"> = {
         outlineColour: "#0000",
         maxSpeed: 0.04,
         minSpeed: 0.02,
-        stretchX: 0.6,
-        stretchY: 0.6,
+        stretchX: 0.8,
+        stretchY: 0.8,
         // dragControl: false,
     },
 };

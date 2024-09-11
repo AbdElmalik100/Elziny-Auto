@@ -1,20 +1,45 @@
+'use client'
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-import "./globals.scss";
-import {Jost} from 'next/font/google'
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
 
-const jost = Jost({subsets: ['latin']})
+import "./globals.scss";
+import { Jost } from 'next/font/google'
+import { store } from './store/index'
+import { Provider, useDispatch } from 'react-redux'
+import axios from "axios";
+import { useEffect } from "react";
+import { getCategories } from "./store/slices/categoriesSlice";
+
+const jost = Jost({ subsets: ['latin'] })
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BASE_URL
+
+
+function MainInitializations({ children }) {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getCategories())
+  }, [dispatch])
+
+  return children
+}
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={jost.className}>
-        <Header></Header>
-        {children}
-        <Footer></Footer>
-      </body>
+      <Provider store={store}>
+        <body className={jost.className}>
+          <MainInitializations>
+            <Header></Header>
+            {children}
+            <Footer></Footer>
+          </MainInitializations>
+        </body>
+      </Provider>
     </html>
   );
 }
