@@ -136,34 +136,37 @@ export default function Home() {
                         index === 0
                           ?
                           <motion.div
+                            key={index}
                             initial={{ x: -50, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}
                             transition={{ type: "tween", ease: "easeOut", delay: 0.3 }}
                             className="w-full"
                           >
-                            <CarCard key={index} car={car}></CarCard>
+                            <CarCard car={car}></CarCard>
                           </motion.div>
                           :
                           index === 1
-                          ?
-                          <motion.div
-                            initial={{ y: -50, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            transition={{ type: "tween", ease: "easeOut", delay: 0.3 }}
-                            className="w-full"
-                          >
+                            ?
+                            <motion.div
+                              key={index}
+                              initial={{ y: -50, opacity: 0 }}
+                              whileInView={{ y: 0, opacity: 1 }}
+                              transition={{ type: "tween", ease: "easeOut", delay: 0.3 }}
+                              className="w-full"
+                            >
 
-                            <CarCard key={index} car={car}></CarCard>
-                          </motion.div>
-                          :
-                          <motion.div
-                            initial={{ x: 50, opacity: 0 }}
-                            whileInView={{ x: 0, opacity: 1 }}
-                            transition={{ type: "tween", ease: "easeOut", delay: 0.3 }}
-                            className="w-full"
-                          >
-                            <CarCard key={index} car={car}></CarCard>
-                          </motion.div>
+                              <CarCard car={car}></CarCard>
+                            </motion.div>
+                            :
+                            <motion.div
+                              key={index}
+                              initial={{ x: 50, opacity: 0 }}
+                              whileInView={{ x: 0, opacity: 1 }}
+                              transition={{ type: "tween", ease: "easeOut", delay: 0.3 }}
+                              className="w-full"
+                            >
+                              <CarCard car={car}></CarCard>
+                            </motion.div>
                       ))
                     }
                     {/* <motion.div
