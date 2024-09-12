@@ -1,51 +1,54 @@
 'use client'
-import { useParams, useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getCars } from '../../store/slices/carsSlice'
-import CarCard from '../../components/CarCard'
+import { getCars } from '../store/slices/carsSlice'
+import Loading from '../components/Loading'
+import emptyFuel from '../../public/images/fuel.png'
+import FiltersButton from '../components/FiltersButton'
+import CarCard from '../components/CarCard'
 import { motion } from 'framer-motion'
-import { getCarModels } from '../../store/slices/carModelsSlice'
-import FiltersButton from '../../components/FiltersButton'
 import Image from 'next/image'
-import emptyFuel from '../../../public/images/fuel.png'
-import Loading from '../../components/Loading'
+import { getCategories } from '../store/slices/categoriesSlice'
+import { useSearchParams } from 'next/navigation'
+import { getCarModels } from '../store/slices/carModelsSlice'
 
-function Cars() {
-    const params = useParams()
+function CarsForSale() {
     const dispatch = useDispatch()
     const { cars, loading } = useSelector(state => state.cars)
+    const { categories } = useSelector(state => state.categories)
     const { carModels } = useSelector(state => state.carModels)
     const query = useSearchParams()
 
-    console.log(carModels);
 
     useEffect(() => {
         if (query.size > 0) {
-            dispatch(getCars({ model: query.get("model") || '', fuel_type: query.get("ft") || '', is_luxury: query.get("lux") || '' }))
+            dispatch(getCars({ category: query.get("category") || '', model: query.get("model") || '', fuel_type: query.get("ft") || '', is_luxury: query.get("lux") || '' }))
+            dispatch(getCarModels({ categoryId: query.get("category") }))
         } else {
-            dispatch(getCars({ slug: params.slug }))
+            dispatch(getCars({}))
         }
-        dispatch(getCarModels({ categorySlug: params.slug }))
     }, [dispatch, query])
 
     return (
-        <div className='cars-page py-32 min-h-screen text-white'>
+        <div className='cars-for-sale min-h-screen py-32 text-white'>
             <div className="container px-4">
                 <div className='filters relative py-3 flex items-center justify-between gap-3'>
                     <div className="left-side">
                         <h3 className='capitalize font-bold text-3xl'>
-                            {carModels[0]?.category.name}
+                            Choose your car
                         </h3>
                     </div>
                     <div className="right-side flex items-center gap-3">
                         {
-                            carModels.length > 0 &&
-                            <FiltersButton carModels={carModels} categorySlug={params.slug} query={query}></FiltersButton>
+                            carModels.length > 0
+                                ?
+                                <FiltersButton categories={categories} carModels={carModels} query={query}></FiltersButton>
+                                :
+                                <FiltersButton categories={categories} carModels={carModels} query={query}></FiltersButton>
                         }
                     </div>
                 </div>
-                <div className='cars-container grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mt-10'>
+                <div className="cars mt-10 grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                     {
                         loading
                             ?
@@ -62,7 +65,7 @@ function Cars() {
                                         whileInView={{ x: 0, opacity: 1 }}
                                         animate={{ x: 0, opacity: 1 }}
                                     >
-                                        <CarCard car={car} preview={true} sale={false}></CarCard>
+                                        <CarCard car={car} sale={true}></CarCard>
                                     </motion.div>
                                 ))
                                 :
@@ -79,4 +82,4 @@ function Cars() {
     )
 }
 
-export default Cars
+export default CarsForSale

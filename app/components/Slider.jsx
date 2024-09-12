@@ -9,7 +9,6 @@ import BoxReveal from "./ui/BoxReveal";
 import Link from "next/link";
 import { Icon } from '@iconify/react';
 
-
 function Slider() {
     return (
         <div className="landing-slider lg:min-h-screen h-1/2 relative">
@@ -106,7 +105,7 @@ function Slider() {
                             </h1>
                         </BoxReveal>
                         <BoxReveal boxColor={"#f3c860"} width="100%" duration={0.5}>
-                            <button className="prime-btn mt-8">Place An Order Now</button>
+                            <Link href='/cars-for-sale' className="prime-btn block w-fit mx-auto mt-8">Place An Order Now</Link>
                         </BoxReveal>
                     </div>
                 </SwiperSlide>

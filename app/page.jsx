@@ -130,7 +130,7 @@ export default function Home() {
                     <h2 className="md:text-7xl text-4xl uppercase text-center font-bold">Take your car</h2>
                     <Icon icon='bxs:down-arrow' className="mx-auto md:text-6xl text-4xl text-primary-300 mt-5 animate-bounce" />
                   </BlurFade>
-                  <div className="boxes-container flex justify-between gap-5 mt-12 lg:flex-row flex-col">
+                  <div className="boxes-container flex justify-center lg:items-stretch items-center gap-5 mt-12 lg:flex-row flex-col">
                     {
                       cars.length > 0 &&
                       cars.map((car, index) => (
@@ -141,9 +141,9 @@ export default function Home() {
                             initial={{ x: -50, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}
                             transition={{ type: "tween", ease: "easeOut", delay: 0.3 }}
-                            className="w-full"
+                            className="lg:w-[450px] w-full"
                           >
-                            <CarCard car={car}></CarCard>
+                            <CarCard car={car} sale={true}></CarCard>
                           </motion.div>
                           :
                           index === 1
@@ -153,10 +153,10 @@ export default function Home() {
                               initial={{ y: -50, opacity: 0 }}
                               whileInView={{ y: 0, opacity: 1 }}
                               transition={{ type: "tween", ease: "easeOut", delay: 0.3 }}
-                              className="w-full"
+                              className="lg:w-[450px] w-full"
                             >
 
-                              <CarCard car={car}></CarCard>
+                              <CarCard car={car} sale={true}></CarCard>
                             </motion.div>
                             :
                             <motion.div
@@ -164,9 +164,9 @@ export default function Home() {
                               initial={{ x: 50, opacity: 0 }}
                               whileInView={{ x: 0, opacity: 1 }}
                               transition={{ type: "tween", ease: "easeOut", delay: 0.3 }}
-                              className="w-full"
+                              className="lg:w-[450px] w-full"
                             >
-                              <CarCard car={car}></CarCard>
+                              <CarCard car={car} sale={true}></CarCard>
                             </motion.div>
                       ))
                     }
@@ -177,7 +177,7 @@ export default function Home() {
                     transition={{ type: "tween", ease: "easeOut", delay: 0.2 }}
                     className="w-full"
                   >
-                    <Link href="#" className="mt-20 line-hover hover:text-primary-300 transition-all ease-in-out duration-300 flex items-center gap-3 text-xl uppercase w-fit mx-auto">
+                    <Link href="/cars-for-sale" className="mt-20 line-hover hover:text-primary-300 transition-all ease-in-out duration-300 flex items-center gap-3 text-xl uppercase w-fit mx-auto">
                       <span>See more cars</span>
                       <Icon icon='bi:arrow-right' className="group-hover:animate-pulse" fontSize={20} />
                     </Link>
@@ -196,10 +196,10 @@ export default function Home() {
                       <div className="banner-box mb-10 lg:p-14 p-8 lg:h-[400px] h-[650px] relative rounded-2xl shadow-lg overflow-hidden lg:bg-gradient-to-r bg-gradient-to-t from-primary-400 to-black flex items-center gap-3 justify-between lg:flex-row flex-col-reverse">
                         <div className="lg:w-3/5 w-full z-10">
                           <h1 className="lg:text-7xl text-4xl uppercase font-bold">Your master piece car is here for you.</h1>
-                          <button className="text-primary-400 group border border-transparent duration-300 border-neutral-900 bg-neutral-900 mt-8 p-3 rounded-lg px-8 flex items-center gap-2 font-bold uppercase transition-all ease-in-out hover:border-white hover:text-white">
+                          <Link href='/cars-for-sale' className="text-primary-400 w-fit group border border-transparent duration-300 border-neutral-900 bg-neutral-900 mt-8 p-3 rounded-lg px-8 flex items-center gap-2 font-bold uppercase transition-all ease-in-out hover:border-white hover:text-white">
                             <span className="group-hover:animate-pulse">Go to cars</span>
                             <Icon icon='bi:arrow-right' className="group-hover:animate-pulse" fontSize={20} />
-                          </button>
+                          </Link>
                         </div>
                         <div className="image-banner absolute lg:top-0 -top-52 lg:-right-24 right-0 h-full lg:w-3/4 w-full">
                           <Image unoptimized loader={loaderProp} src={bannerCar} alt="banner car" className="w-full h-full object-cover object-bottom lg:[mask-image:linear-gradient(to_right,transparent_15%,#000_100%)] [mask-image:linear-gradient(to_top,transparent_15%,#000_100%)]" />
@@ -212,7 +212,6 @@ export default function Home() {
             </div>
           </>
       }
-
     </main>
   );
 }

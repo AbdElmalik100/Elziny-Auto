@@ -41,7 +41,7 @@ function Footer() {
                                     <Link href='#' className='line-hover transition-all ease-in-out hover:text-primary-300'>About</Link>
                                 </li>
                                 <li>
-                                    <Link href='#' className='line-hover transition-all ease-in-out hover:text-primary-300'>Cars for sale</Link>
+                                    <Link href='/cars-for-sale' className='line-hover transition-all ease-in-out hover:text-primary-300'>Cars for sale</Link>
                                 </li>
                                 <li>
                                     <Link href='#' className='line-hover transition-all ease-in-out hover:text-primary-300'>Shop</Link>

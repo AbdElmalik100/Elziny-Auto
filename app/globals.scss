@@ -26,7 +26,7 @@
     @apply w-full before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-gradient-to-t before:from-neutral-900 to-transparent before:pointer-events-none before:z-10;
   }
   .badge {
-    @apply text-xs uppercase rounded-full px-3 p-0.5 absolute top-1 left-1;
+    @apply text-xs uppercase rounded-full px-3 p-0.5 text-center;
   }
 }
 

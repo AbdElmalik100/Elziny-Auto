@@ -2,17 +2,21 @@ import { Icon } from '@iconify/react/dist/iconify.js'
 import { useClickAway } from '@uidotdev/usehooks'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { useDispatch } from 'react-redux'
+import { getCarModels } from '../store/slices/carModelsSlice'
 
-function FiltersButton({ carModels, categorySlug, query }) {
+function FiltersButton({ categories, carModels, categorySlug, query }) {
     const router = useRouter()
     const [show, setShow] = useState(false)
+    const dispatch = useDispatch()
     const [filters, setFilters] = useState({
         is_luxury: query.get("lux") ? query.get("lux") : '',
         fuel_type: query.get("ft") ? query.get("ft") : '',
         model: query.get("model") ? query.get("model") : '',
+        category: query.get("category") ? query.get("category") : '',
     })
-
-
+    const [models, setModels] = useState(carModels?.length > 0 ? [...carModels] : [])
+    
     const filterMenu = useClickAway(() => {
         setShow(false)
     })
@@ -23,10 +27,18 @@ function FiltersButton({ carModels, categorySlug, query }) {
             ...filters,
             [name]: value
         })
+        if (name === 'category') {
+            dispatch(getCarModels({categoryId: value})).then(response => {
+                setModels([...response.payload])
+            })
+        }
+
     }
 
     const applyFilters = () => {
-        router.push(`/categories/${categorySlug}?model=${filters.model}&ft=${filters.fuel_type}&lux=${filters.is_luxury}`)
+        if (categories?.length > 0) {
+            router.push(`/cars-for-sale?category=${filters.category}&model=${filters.model}&ft=${filters.fuel_type}&lux=${filters.is_luxury}`)
+        } else router.push(`/categories/${categorySlug}?model=${filters.model}&ft=${filters.fuel_type}&lux=${filters.is_luxury}`)
         setShow(false)
     }
 
@@ -35,8 +47,11 @@ function FiltersButton({ carModels, categorySlug, query }) {
             is_luxury: '',
             fuel_type: '',
             model: '',
+            category: '',
         })
-        router.push(`/categories/${categorySlug}`)
+        if (categories?.length > 0) {
+            router.push(`/cars-for-sale`)
+        } else router.push(`/categories/${categorySlug}`)
         setShow(false)
     }
 
@@ -50,13 +65,27 @@ function FiltersButton({ carModels, categorySlug, query }) {
                 <Icon icon='material-symbols:filter-list-rounded' fontSize={24} />
             </button>
             <div className={`filter-menu bg-neutral-800 p-4 px-5 md:w-[300px] w-full z-20 transition-all ease-out flex flex-col gap-3 absolute md:top-14 top-16 right-0 rounded-lg shadow-lg border border-neutral-400 ${show ? 'scale-100 opacity-100 visible' : 'scale-95 opacity-0 invisible'}`}>
+                {
+                    categories?.length > 0 &&
+                    <label>
+                        <span className='block mb-1'>Category</span>
+                        <select className='p-1 w-full px-3 rounded-lg border border-neutral-400 capitalize' name="category" id="" value={filters.category} onChange={handleChange}>
+                            <option value="" disabled defaultValue={""}>Category</option>
+                            {
+                                categories.map((category, index) => (
+                                    <option key={index} value={category._id} className='capitalize'>{category.name}</option>
+                                ))
+                            }
+                        </select>
+                    </label>
+                }
                 <label>
                     <span className='block mb-1'>Model</span>
                     <select className='p-1 w-full px-3 rounded-lg border border-neutral-400' name="model" id="" value={filters.model} onChange={handleChange}>
                         <option value="" disabled defaultValue={""}>Model</option>
                         {
-                            carModels.length > 0 &&
-                            carModels.map((model, index) => (
+                            models?.length > 0 &&
+                            models.map((model, index) => (
                                 <option key={index} value={model._id}>{model.name}</option>
                             ))
                         }

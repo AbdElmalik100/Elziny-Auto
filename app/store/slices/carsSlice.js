@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getCars = createAsyncThunk("carsSlice/getCars", async ({slug = "", model = "", fuel_type = "", is_luxury = false, limit = 0}) => {
-    const response = await axios.get(`api/cars?slug=${slug}&model=${model}&fuel_type=${fuel_type}&is_luxury=${is_luxury}&limit=${limit}`)
+export const getCars = createAsyncThunk("carsSlice/getCars", async ({slug = "", category = "", model = "", fuel_type = "", is_luxury = "", limit = 0}) => {
+    const response = await axios.get(`api/cars?slug=${slug}&category=${category}&model=${model}&fuel_type=${fuel_type}&is_luxury=${is_luxury}&limit=${limit}`)
     return response.data
 })
 export const getCar = createAsyncThunk("carsSlice/getCar", async (id) => {
@@ -32,6 +32,7 @@ export const carsSlice = createSlice({
             .addCase(getCars.rejected, (state, action) => {
                 state.loading = false
             })
+        
         builder
             .addCase(getCar.pending, state => {
                 state.loading = true

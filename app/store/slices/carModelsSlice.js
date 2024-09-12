@@ -2,8 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 
-export const getCarModels = createAsyncThunk('carModelsSlice/getCarModels', async (categorySlug) => {
-    const response = await axios.get(`api/car-models?category=${categorySlug}`)
+export const getCarModels = createAsyncThunk('carModelsSlice/getCarModels', async ({categorySlug = '', categoryId = ''}) => {
+    const response = await axios.get(`api/car-models?category=${categorySlug}&categoryId=${categoryId}`)
     return response.data
 })
 
