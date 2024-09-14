@@ -205,7 +205,7 @@ function CarDetails() {
                     className='mt-32 text-center'
                 >
                     <p className='lg:text-3xl text-2xl'>
-                        If you're interested in acquiring your own luxury car, please feel free to contact us to arrange for your vehicle and customize it according to your preferences.
+                        If you&apos;re interested in acquiring your own luxury car, please feel free to contact us to arrange for your vehicle and customize it according to your preferences.
                     </p>
                     <a href="https:wa.me/+2001111874999" target='_blank' className='prime-btn mx-auto flex text-xl mt-10 items-center gap-3 w-fit justify-center'>
                         <Icon icon='ic:baseline-whatsapp' fontSize={28} />
