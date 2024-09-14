@@ -18,7 +18,6 @@ function Cars() {
     const { carModels } = useSelector(state => state.carModels)
     const query = useSearchParams()
 
-    console.log(carModels);
 
     useEffect(() => {
         if (query.size > 0) {

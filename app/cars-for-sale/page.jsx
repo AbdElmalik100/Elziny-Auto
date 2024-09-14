@@ -8,7 +8,6 @@ import FiltersButton from '../components/FiltersButton'
 import CarCard from '../components/CarCard'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { getCategories } from '../store/slices/categoriesSlice'
 import { useSearchParams } from 'next/navigation'
 import { getCarModels } from '../store/slices/carModelsSlice'
 
