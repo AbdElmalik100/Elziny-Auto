@@ -3,6 +3,8 @@ import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { BorderBeam } from './ui/BorderBeam'
+import elzinyLogo from '../../public/images/Elziny Logo Alt.png'
+import Image from "next/image"
 
 function Footer() {
     return (
@@ -16,8 +18,8 @@ function Footer() {
                 <div className="container px-4">
                     <div className='grid grid-cols-4 gap-10 justify-items-center'>
                         <div className="left-side lg:col-span-1 col-span-4">
-                            <Link href='/' className='uppercase font-bold text-4xl mb-2 block lg:text-start text-center'>
-                                Elziny
+                            <Link href='/' className='uppercase font-bold text-4xl mb-3 block lg:text-start text-center'>
+                                <Image width={200} src={elzinyLogo} alt="Elziny Logo" priority />
                             </Link>
                             <p className='text-neutral-400 text-sm'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla vitae sed in vel soluta debitis quidem quis illo provident facilis, eos architecto sapiente repellendus quibusdam dolor sit numquam laudantium iusto!</p>
                             <div className="contacts mt-8 flex flex-col gap-4">

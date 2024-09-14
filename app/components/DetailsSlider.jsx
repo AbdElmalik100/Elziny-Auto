@@ -6,7 +6,8 @@ import { useState } from 'react';
 
 function DetailsSlider({car}) {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
+    console.log(thumbsSwiper);
+    
     return (
         <>
             <Swiper

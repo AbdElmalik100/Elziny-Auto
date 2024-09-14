@@ -26,17 +26,17 @@ function MobileMenu() {
                     </div>
                     <ul className="links flex flex-col gap-4 text-2xl items-center grow justify-center">
                         <li className="line-hover hover:text-primary-300">
-                            <Link href='/'>
+                            <Link href='/' onClick={() => setShowMenu(false)}>
                                 About
                             </Link>
                         </li>
                         <li className="line-hover hover:text-primary-300">
-                            <Link href='/categories'>
+                            <Link href='/categories' onClick={() => setShowMenu(false)}>
                                 Categories
                             </Link>
                         </li>
                         <li className="line-hover hover:text-primary-300">
-                            <Link href='/'>
+                            <Link href='/cars-for-sale' onClick={() => setShowMenu(false)}>
                                 Cars for sale
                             </Link>
                         </li>

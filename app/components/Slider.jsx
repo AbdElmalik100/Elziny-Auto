@@ -12,7 +12,7 @@ import { Icon } from '@iconify/react';
 function Slider() {
     return (
         <div className="landing-slider lg:min-h-screen h-1/2 relative">
-            <a href="#Categories" className="scroll-down w-6 h-10 z-20 rounded-full py-3 absolute bottom-20 left-1/2 -translate-x-1/2 border border-neutral-400 lg:hidden animate-pulse transition-transform ease-in-out flex items-end justify-center">
+            <a href="#Categories" className="scroll-down mx-auto w-6 h-10 z-20 rounded-full py-3 absolute bottom-20 left-1/2 -translate-x-1/2 border border-neutral-400 lg:hidden animate-pulse transition-transform ease-in-out flex items-start justify-center">
                 <span className="dot w-1 h-1 bg-neutral-400 rounded-full block animate-bounce"></span>
             </a>
             <Swiper

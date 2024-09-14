@@ -95,7 +95,7 @@ function CarDetails() {
                                         Engine capacity
                                     </span>
                                     <span>
-                                        {car.properties?.engine_capacity}
+                                        {car.properties?.engine_capacity || 'N/A'}
                                     </span>
                                 </div>
                                 <div className='flex justify-between items-center gap-3'>
@@ -104,16 +104,44 @@ function CarDetails() {
                                         Horse power
                                     </span>
                                     <span>
-                                        {car.properties?.horse_power}
+                                        {car.properties?.horse_power || 'N/A'}
                                     </span>
                                 </div>
+                                <div className='flex justify-between items-center gap-3'>
+                                    <span className='flex items-center gap-2'>
+                                        <Icon icon='fluent:fast-acceleration-24-filled' fontSize={20} />
+                                        Acceleration
+                                    </span>
+                                    <span>
+                                        {car.properties?.acceleration || 'N/A'}
+                                    </span>
+                                </div> 
+                                <div className='flex justify-between items-center gap-3'>
+                                    <span className='flex items-center gap-2'>
+                                        <Icon icon='ion:speedometer' fontSize={20} />
+                                        Speeds
+                                    </span>
+                                    <span>
+                                        {car.properties?.speeds || 'N/A'}
+                                    </span>
+                                </div> 
+                                <div className='flex justify-between items-center gap-3'>
+                                    <span className='flex items-center gap-2'>
+                                        <Icon icon='mdi:car-info' fontSize={20} />
+                                        Kilometers
+                                    </span>
+                                    <span>
+                                        {car.properties?.kilometers || 'N/A'}
+                                    </span>
+                                </div> 
+                                {/* New */}
                                 <div className='flex justify-between items-center gap-3'>
                                     <span className='flex items-center gap-2'>
                                         <Icon icon='material-symbols:speed' fontSize={20} />
                                         Max speed
                                     </span>
                                     <span>
-                                        {car.properties?.max_speed}
+                                        {car.properties?.max_speed || 'N/A'}
                                     </span>
                                 </div>
                                 <div className='flex justify-between items-center gap-3'>
@@ -122,7 +150,7 @@ function CarDetails() {
                                         Transmission type
                                     </span>
                                     <span>
-                                        {car.properties?.transmission_type}
+                                        {car.properties?.transmission_type || 'N/A'}
                                     </span>
                                 </div>
                                 <div className='flex justify-between items-center gap-3'>
@@ -131,7 +159,7 @@ function CarDetails() {
                                         Number of cylinders
                                     </span>
                                     <span>
-                                        {car.properties?.number_of_cylinders}
+                                        {car.properties?.number_of_cylinders || 'N/A'}
                                     </span>
                                 </div>
                             </div>
