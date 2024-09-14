@@ -17,7 +17,7 @@ function CarCard(props) {
                     <NeonGradientCard borderSize={0} borderRadius={16} neonColors={{ firstColor: "#efaf30", secondColor: "#8b3b15" }}>
                         <ShineBorder
                             borderRadius={15}
-                            className="border w-full !bg-transparent border-neutral-700 relative flex flex-col h-full"
+                            className="border w-full !bg-gradient-to-b from-primary-400 to-black border-neutral-700 relative flex flex-col h-full"
                             color={['#f3c860', '#fbeeca', '#efaf30', '#ab4b12', '#411807']}
                         >
                             <div className="img w-full h-[250px] relative">
