@@ -29,6 +29,7 @@ function CarsForSale() {
     }, [dispatch, query])
 
     return (
+
         <div className='cars-for-sale min-h-screen py-32 text-white'>
             <div className="container px-4">
                 <div className='filters relative py-3 flex items-center justify-between gap-3'>

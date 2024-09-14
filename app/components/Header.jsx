@@ -16,17 +16,17 @@ function Header() {
             </div>
             <ul className="links md:flex items-center gap-4 uppercase hidden">
                 <li className="line-hover hover:text-primary-300 has-[a.active]:text-primary-400 has-[a.active]:before:scale-100">
-                    <Link href='/' className={`${pathName === '/about' ? "active" : ""}`}>
+                    <Link href='/' className={`${pathName.includes('/about') ? "active" : ""}`}>
                         About
                     </Link>
                 </li>
                 <li className="line-hover hover:text-primary-300 has-[a.active]:text-primary-400 has-[a.active]:before:scale-100">
-                    <Link href='/categories' className={`${pathName === '/categories' ? 'active' : ''}`}>
+                    <Link href='/categories' className={`${pathName.includes('/categories')  ? 'active' : ''}`}>
                         Categories
                     </Link>
                 </li>
                 <li className="line-hover hover:text-primary-300 has-[a.active]:text-primary-400 has-[a.active]:before:scale-100">
-                    <Link href='/cars-for-sale' className={`${pathName === '/cars-for-sale' ? 'active' : ''}`}>
+                    <Link href='/cars-for-sale' className={`${pathName.includes('/cars-for-sale') ? 'active' : ''}`}>
                         Cars for sale
                     </Link>
                 </li>

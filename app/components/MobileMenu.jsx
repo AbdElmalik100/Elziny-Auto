@@ -3,8 +3,10 @@ import { Icon } from '@iconify/react/dist/iconify.js'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { useClickAway } from '@uidotdev/usehooks'
+import { usePathname } from 'next/navigation'
 
 function MobileMenu() {
+    const pathName = usePathname()
     const [showMenu, setShowMenu] = useState(false)
     const menu = useClickAway(() => {
         setShowMenu(false)
@@ -26,17 +28,17 @@ function MobileMenu() {
                     </div>
                     <ul className="links flex flex-col gap-4 text-2xl items-center grow justify-center">
                         <li className="line-hover hover:text-primary-300">
-                            <Link href='/' onClick={() => setShowMenu(false)}>
+                            <Link href='/' className={`${pathName.includes('/about') ? "active" : ""}`} onClick={() => setShowMenu(false)}>
                                 About
                             </Link>
                         </li>
                         <li className="line-hover hover:text-primary-300">
-                            <Link href='/categories' onClick={() => setShowMenu(false)}>
+                            <Link href='/categories' className={`${pathName.includes('/categories')  ? 'active' : ''}`} onClick={() => setShowMenu(false)}>
                                 Categories
                             </Link>
                         </li>
                         <li className="line-hover hover:text-primary-300">
-                            <Link href='/cars-for-sale' onClick={() => setShowMenu(false)}>
+                            <Link href='/cars-for-sale' className={`${pathName.includes('/cars-for-sale') ? 'active' : ''}`} onClick={() => setShowMenu(false)}>
                                 Cars for sale
                             </Link>
                         </li>
