@@ -60,7 +60,7 @@ function CarsForSale() {
                                     <motion.div
                                         key={index}
                                         initial={{ x: -25, opacity: 0 }}
-                                        transition={{ type: "tween", ease: "easeOut" }}
+                                        transition={{ type: "tween", ease: "easeOut", delay: 0.08 * index }}
                                         exit={{ x: -25, opacity: 0 }}
                                         whileInView={{ x: 0, opacity: 1 }}
                                         animate={{ x: 0, opacity: 1 }}

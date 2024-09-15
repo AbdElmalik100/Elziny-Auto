@@ -3,16 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import loaderProp from "../utils/ImageLoader";
 import { NeonGradientCard } from "./ui/NeonGradientCard";
-import { Icon } from "@iconify/react";
-import SparklesText from "./ui/SparklesText";
-
+import PremiumCard from "./PremiumCard";
 
 function CarCard(props) {
 
     return (
         <Link id="outer-link" href={`${props.sale ? `/cars-for-sale/${props.car._id}` : `/categories/${props.car.category.slug}/${props.car._id}`}`}>
             {
-                props.car.is_luxury && !props.preview
+                props.car.is_luxury
                     ?
                     <NeonGradientCard borderSize={0} borderRadius={16} neonColors={{ firstColor: "#efaf30", secondColor: "#8b3b15" }}>
                         <ShineBorder
@@ -23,11 +21,8 @@ function CarCard(props) {
                             <div className="img w-full h-[250px] relative">
                                 <div className="absolute top-1 left-1 flex flex-col gap-2">
                                     {
-                                        props.car.is_luxury &&
-                                        <span className="luxury badge rounded-full font-bold text-white bg-primary-400 flex items-center gap-1">
-                                            <Icon icon="ic:round-stars" className="animate-spin duration-1000" fontSize={22} />
-                                            <SparklesText text="Premium" sparklesCount={5} className="text-xs font-normal"></SparklesText>
-                                        </span>
+                                        // props.car.is_luxury &&
+                                        <PremiumCard></PremiumCard>
                                     }
                                     {
                                         !props.preview &&
@@ -68,6 +63,7 @@ function CarCard(props) {
                                     (props.car.is_soldout ? <span className="isAvailable badge bg-rose-700">Sold out</span> : <span className="isAvailable badge bg-green-700">Available</span>)
                                 }
                             </div>
+                            
                             <Link id="inner-link" href={`/categories/${props.car.category.slug}`} title={props.car.category.name} className="category absolute top-1 right-1 rounded-full w-12 h-12 bg-neutral-800 shadow-lg grid place-items-center border border-transparent transition-all ease-out hover:border-primary-400">
                                 <Image unoptimized loader={loaderProp} width={10000} height={150} src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/categories/${props.car.category.image}`} alt={props.car.category.image} className="rounded-xl w-10 h-10 object-cover" />
                             </Link>
