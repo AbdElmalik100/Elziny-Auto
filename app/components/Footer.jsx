@@ -72,7 +72,7 @@ function Footer() {
                                 Follow us <span className='text-primary-300 italic ms-2'>On</span>
                             </h2>
                             <div className="social-links flex items-center gap-3 lg:justify-start justify-center">
-                                <a href="www.facebook.com" target='_blank' className='grid place-items-center w-10 h-10 border rounded-full transition-all ease-in-out duration-300 hover:text-primary-300 hover:border-primary-300'>
+                                <a href="https://www.facebook.com/elzinygroup" target='_blank' className='grid place-items-center w-10 h-10 border rounded-full transition-all ease-in-out duration-300 hover:text-primary-300 hover:border-primary-300'>
                                     <Icon icon='ri:facebook-fill' fontSize={22}></Icon>
                                 </a>
                                 <a href="www.instagram.com" target='_blank' className='grid place-items-center w-10 h-10 border rounded-full transition-all ease-in-out duration-300 hover:text-primary-300 hover:border-primary-300'>
