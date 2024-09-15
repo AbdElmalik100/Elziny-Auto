@@ -15,7 +15,7 @@ function DetailsSlider({car}) {
                     '--swiper-pagination-color': '#fff',
                 }}
                 spaceBetween={10}
-                loop={true}
+                loop={car.images?.length > 1}
                 navigation={false}
                 thumbs={{ swiper: thumbsSwiper }}
                 modules={[FreeMode, Navigation, Thumbs]}
@@ -24,7 +24,7 @@ function DetailsSlider({car}) {
                 {
                     car.images?.map((image, index) => (
                         <SwiperSlide key={index} className='relative rounded-3xl !h-auto'>
-                            <img className='!w-full !h-full rounded-3xl' src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/cars/${image}`} />
+                            <img className='!w-full !h-full rounded-3xl' src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/cars/${image}`} alt={image} />
                         </SwiperSlide>
                     ))
                 }
@@ -42,7 +42,7 @@ function DetailsSlider({car}) {
                 {
                     car.images?.map((image, index) => (
                         <SwiperSlide key={index} className='!items-stretch cursor-pointer'>
-                            <img width={150} height={150} className='!w-full my-3 lg:rounded-2xl rounded-xl !h-[auto]' src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/cars/${image}`} />
+                            <img width={150} height={150} className='!w-full my-3 lg:rounded-2xl rounded-xl !h-[auto]' src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/cars/${image}`} alt={image} />
                         </SwiperSlide>
                     ))
                 }
